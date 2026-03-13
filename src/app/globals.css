@@ -28,7 +28,7 @@
   --color-border: var(--border);
   --color-accent: var(--accent);
   --color-accent-muted: var(--accent-muted);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-lora);
   --font-mono: var(--font-geist-mono);
 }
 
