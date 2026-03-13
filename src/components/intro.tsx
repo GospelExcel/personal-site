@@ -78,14 +78,6 @@ export function Intro() {
       return;
     }
 
-    // Fade lines out
-    anime({
-      targets: ".ml5 .line",
-      opacity: 0,
-      duration: 400,
-      easing: "easeOutQuint",
-    });
-
     // Tell the header to show itself
     window.dispatchEvent(new CustomEvent("intro-settled"));
 
