@@ -9,6 +9,7 @@ export function Intro() {
 
   useEffect(() => {
     if (sessionStorage.getItem("intro-played")) {
+      document.documentElement.classList.add("intro-done");
       setPhase("done");
       return;
     }
@@ -99,6 +100,7 @@ export function Intro() {
   }
 
   function finish() {
+    document.documentElement.classList.add("intro-done");
     setPhase("done");
     sessionStorage.setItem("intro-played", "1");
   }

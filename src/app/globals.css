@@ -104,6 +104,11 @@ body {
   opacity: 0;
 }
 
+/* When intro has already played, show letters immediately */
+.intro-done .ml5 .letters {
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-blur-in {
     animation: none;

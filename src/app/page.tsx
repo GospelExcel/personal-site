@@ -12,7 +12,7 @@ export default function Home() {
       <Intro />
       <Header />
       <main className="mx-auto max-w-2xl px-6">
-        <section className="flex min-h-[70vh] items-center justify-center">
+        <section className="relative z-[60] flex min-h-[70vh] items-center justify-center">
           <h1 className="ml5">
             <span className="text-wrapper">
               <span className="line line1" />
