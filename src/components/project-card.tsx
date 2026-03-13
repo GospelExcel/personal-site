@@ -3,18 +3,23 @@ import { ArrowUpRightIcon } from "./icons";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <a
-      href={project.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block rounded-lg border border-border bg-surface p-5 transition-shadow hover:shadow-sm"
+    <div
+      className="group rounded-lg border border-border bg-surface p-5 transition-shadow hover:shadow-sm"
       style={{ borderLeftWidth: 3, borderLeftColor: "var(--accent)" }}
     >
       <div className="flex items-start justify-between">
-        <h3 className="font-semibold text-foreground">{project.title}</h3>
+        <a href={project.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground transition-colors hover:text-accent">{project.title}</a>
         <div className="flex items-center gap-2">
           <span className="font-mono text-xs text-muted">{project.date}</span>
-          <ArrowUpRightIcon className="h-3.5 w-3.5 text-muted opacity-0 transition-opacity group-hover:opacity-100" />
+          <a
+            href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Visit ${project.title}`}
+            className="text-muted transition-colors hover:text-accent"
+          >
+            <ArrowUpRightIcon className="h-3.5 w-3.5" />
+          </a>
         </div>
       </div>
       <p className="mt-2 text-sm leading-relaxed text-muted">
@@ -33,15 +38,18 @@ export function ProjectCard({ project }: { project: Project }) {
       {project.links && project.links.length > 0 && (
         <div className="mt-3 flex gap-3">
           {project.links.map((link) => (
-            <span
+            <a
               key={link.label}
-              className="text-xs text-accent underline decoration-accent/30"
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-accent underline decoration-accent/30 transition-colors hover:text-foreground"
             >
               {link.label}
-            </span>
+            </a>
           ))}
         </div>
       )}
-    </a>
+    </div>
   );
 }
