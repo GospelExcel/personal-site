@@ -5,7 +5,7 @@ export function About() {
     <section>
       <FadeIn>
         <p className="text-base leading-relaxed text-foreground">
-          Software Engineer based in NYC. I love creating in every shape and
+          <span className="text-shimmer">Software Engineer</span> based in NYC. I love creating in every shape and
           form, from the terminal to the stage. I&apos;m a problem solver and
           builder, currently working on constructing things to remind myself and
           others that there is life outside of the screens we stare at.
