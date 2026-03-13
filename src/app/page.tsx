@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Header } from "@/components/header";
 import { Intro } from "@/components/intro";
 import { About } from "@/components/about";
@@ -11,7 +12,7 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Intro />
       <Header />
-      <main className="mx-auto max-w-2xl px-6">
+      <main className="relative mx-auto max-w-2xl px-6">
         <section className="relative z-[60] pt-16 pb-12 text-center">
           <h1 className="ml5">
             <span className="text-wrapper">
@@ -24,7 +25,16 @@ export default function Home() {
             </span>
           </h1>
         </section>
-        <div className="space-y-16 pb-20">
+        <div className="relative space-y-16 pb-20">
+          <div className="pointer-events-none absolute -right-32 top-0 hidden opacity-20 lg:block">
+            <Image
+              src="/mascot.png"
+              alt=""
+              width={200}
+              height={200}
+              className="select-none"
+            />
+          </div>
           <About />
           <Projects />
           <Experience />
