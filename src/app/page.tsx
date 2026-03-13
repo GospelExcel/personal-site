@@ -26,7 +26,7 @@ export default function Home() {
           </h1>
         </section>
         <div className="relative space-y-16 pb-20">
-          <div className="group absolute -right-44 top-0 hidden lg:block">
+          <div className="group absolute -right-56 top-0 hidden lg:block">
             <div className="relative">
               <Image
                 src="/mascot.png"

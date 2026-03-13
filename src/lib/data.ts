@@ -33,7 +33,7 @@ export const projects: Project[] = [
     title: "Huddle",
     description:
       "iOS habit-tracking companion built around Pillars, Blockers, Drivers, and reflective Check-ins. Feature-based architecture with real-time sync and push notifications.",
-    href: "https://github.com/GospelExcel",
+    href: "https://huddlehabits.com/",
     date: "2025",
     tags: ["SwiftUI", "SwiftData", "Supabase", "Firebase", "Mixpanel", "Metal Shaders"],
   },
