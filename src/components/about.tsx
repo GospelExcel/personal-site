@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FadeIn } from "./fade-in";
 import { ContactPopup } from "./contact-popup";
 
 export function About() {
   const [popupOpen, setPopupOpen] = useState(false);
+  const hoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   return (
     <section className="relative z-10">
@@ -30,18 +31,20 @@ export function About() {
       <FadeIn delay={300}>
         <div className="mt-4 text-base leading-relaxed text-muted">
           New friends to make. New experiences to be had.{" "}
-          <span className="relative z-[999] inline-block">
-            <button
-              type="button"
-              onClick={() => setPopupOpen((prev) => !prev)}
-              className="text-shimmer-bold cursor-pointer italic"
-            >
+          <span
+            className="relative z-[999] inline-block"
+            onMouseEnter={() => {
+              if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+              setPopupOpen(true);
+            }}
+            onMouseLeave={() => {
+              hoverTimeout.current = setTimeout(() => setPopupOpen(false), 200);
+            }}
+          >
+            <span className="text-shimmer-bold cursor-pointer italic">
               Let&apos;s build.
-            </button>
-            <ContactPopup
-              open={popupOpen}
-              onClose={() => setPopupOpen(false)}
-            />
+            </span>
+            <ContactPopup open={popupOpen} onClose={() => setPopupOpen(false)} />
           </span>
         </div>
       </FadeIn>

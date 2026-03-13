@@ -55,23 +55,6 @@ export function ContactPopup({
     }
   }, [open]);
 
-  useEffect(() => {
-    if (!open) return;
-    function handleClick(e: MouseEvent) {
-      if (popupRef.current && !popupRef.current.contains(e.target as Node)) {
-        onClose();
-      }
-    }
-    // Delay listener so the opening click doesn't immediately close it
-    const timer = setTimeout(
-      () => document.addEventListener("click", handleClick),
-      10
-    );
-    return () => {
-      clearTimeout(timer);
-      document.removeEventListener("click", handleClick);
-    };
-  }, [open, onClose]);
 
   return (
     <div

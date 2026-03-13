@@ -33,7 +33,12 @@ export function Header() {
           <Link href="/" className="transition-colors hover:text-foreground">
             home
           </Link>
-          <span className="cursor-default text-border" title="Coming soon">blog</span>
+          <span className="group relative cursor-default text-border">
+            blog
+            <span className="pointer-events-none absolute -bottom-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-border bg-surface px-3 py-1 text-xs text-muted opacity-0 shadow-sm transition-all duration-300 group-hover:opacity-100 group-hover:-bottom-10">
+              Coming soon
+            </span>
+          </span>
         </nav>
         <ThemeToggle />
       </div>
