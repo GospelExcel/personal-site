@@ -26,13 +26,13 @@ export default function Home() {
           </h1>
         </section>
         <div className="relative space-y-16 pb-20">
-          <div className="pointer-events-none absolute -right-32 top-0 hidden opacity-20 lg:block">
+          <div className="absolute -right-28 top-0 hidden lg:block">
             <Image
               src="/mascot.png"
               alt=""
               width={200}
               height={200}
-              className="select-none"
+              className="scale-75 rotate-12 opacity-20 transition-all duration-500 ease-out hover:scale-100 hover:rotate-0 hover:opacity-100"
             />
           </div>
           <About />
