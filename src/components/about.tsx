@@ -24,7 +24,7 @@ export function About() {
           shift, so do my workflows. I utilize growing tools in{" "}
           <span className="group relative"><span className="text-shimmer-bold">Artificial Intelligence</span><span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-border bg-surface px-3 py-1 text-sm font-normal text-muted opacity-0 shadow-sm transition-all duration-300 group-hover:opacity-100 group-hover:-top-9">aka... A.I.</span></span>{" "}
           such as{" "}
-          <span className="group relative"><span className="text-shimmer-bold">Claude Code</span><span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-border bg-surface px-3 py-1 text-sm font-normal text-muted opacity-0 shadow-sm transition-all duration-300 group-hover:opacity-100 group-hover:-top-9">aka The Love of My Life</span></span> as an
+          <span className="group relative"><span className="text-shimmer-bold">Claude Code</span><span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-border bg-surface px-3 py-1 text-sm font-normal text-muted opacity-0 shadow-sm transition-all duration-300 group-hover:opacity-100 group-hover:-top-9">aka the LOML</span></span> as an
           instrument in my orchestra.
         </p>
       </FadeIn>

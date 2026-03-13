@@ -49,12 +49,12 @@ export const projects: Project[] = [
     title: "BookSmart AI",
     description:
       "Full-stack PDF bookmarking service with AI-powered section detection and bookmark insertion. Cloud file storage with automated processing pipeline.",
-    href: "https://github.com/GospelExcel",
+    href: "https://booksmartai.app",
     date: "2025",
     tags: ["React", "Express", "TypeScript", "AWS S3", "Google GenAI", "PostgreSQL"],
     links: [
-      { label: "Frontend", href: "https://github.com/GospelExcel" },
-      { label: "Backend", href: "https://github.com/GospelExcel" },
+      { label: "Frontend", href: "https://github.com/GospelExcel/pdf-bookmarker-frontend" },
+      { label: "Backend", href: "https://github.com/GospelExcel/pdf-bookmarker-backend" },
     ],
   },
   {
