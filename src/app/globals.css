@@ -59,40 +59,49 @@ body {
   animation: blur-in 0.6s ease-out both;
 }
 
-/* Intro animation keyframes */
-@keyframes line-scale-in {
-  from { transform: scaleX(0); opacity: 0; }
-  to { transform: scaleX(1); opacity: 1; }
+/* Intro: moving-letters #5 styles */
+.ml5 {
+  position: relative;
+  font-weight: 600;
+  font-size: 3em;
+  color: var(--foreground);
 }
 
-@keyframes line-spread-up {
-  from { transform: translateY(0); }
-  to { transform: translateY(-20px); }
+@media (min-width: 640px) {
+  .ml5 {
+    font-size: 4em;
+  }
 }
 
-@keyframes line-spread-down {
-  from { transform: translateY(0); }
-  to { transform: translateY(20px); }
+.ml5 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+  line-height: 1em;
 }
 
-@keyframes slide-in-left {
-  from { transform: translateX(-30px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+.ml5 .line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 3px;
+  width: 100%;
+  background-color: var(--accent);
+  transform-origin: 0.5 0;
 }
 
-@keyframes slide-in-right {
-  from { transform: translateX(30px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+.ml5 .name-group {
+  display: inline-flex;
+  gap: 0.25em;
 }
 
-@keyframes line-fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
-@keyframes overlay-fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; }
+.ml5 .letters {
+  display: inline-block;
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
