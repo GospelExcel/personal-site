@@ -25,7 +25,7 @@ export function Header() {
 
   return (
     <header
-      className="sticky top-0 z-10 border-b border-border bg-background/80 backdrop-blur-sm transition-opacity duration-300"
+      className="sticky top-0 z-[70] border-b border-border bg-background/80 backdrop-blur-sm transition-opacity duration-300"
       style={{ opacity: visible ? 1 : 0 }}
     >
       <div className="mx-auto flex max-w-2xl items-center justify-end px-6 py-4">
