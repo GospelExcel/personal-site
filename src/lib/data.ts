@@ -30,17 +30,40 @@ export const siteConfig = {
 
 export const projects: Project[] = [
   {
+    title: "Huddle",
+    description:
+      "iOS habit-tracking companion built around Pillars, Blockers, Drivers, and reflective Check-ins. Feature-based architecture with real-time sync and push notifications.",
+    href: "https://github.com/GospelExcel",
+    date: "2025",
+    tags: ["SwiftUI", "SwiftData", "Supabase", "Firebase", "Mixpanel", "Metal Shaders"],
+  },
+  {
+    title: "Flint",
+    description:
+      "AI-powered journal and pursuit tracker with memory extraction, ambient thoughts while writing, and multi-turn conversations. Uses Claude for reflection and lightweight suggestions.",
+    href: "https://github.com/GospelExcel",
+    date: "2026",
+    tags: ["SwiftUI", "SwiftData", "Anthropic API", "AVFoundation", "CoreLocation"],
+  },
+  {
     title: "BookSmart AI",
     description:
-      "Full-stack AI-powered PDF bookmark generator. Upload documents and get automated section detection and bookmark insertion using Google Gemini AI with 85%+ accuracy.",
-    href: "#",
-    date: "2024",
-    tags: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "AWS", "Gemini AI"],
+      "Full-stack PDF bookmarking service with AI-powered section detection and bookmark insertion. Cloud file storage with automated processing pipeline.",
+    href: "https://github.com/GospelExcel",
+    date: "2025",
+    tags: ["React", "Express", "TypeScript", "AWS S3", "Google GenAI", "PostgreSQL"],
     links: [
-      { label: "Live Demo", href: "#" },
       { label: "Frontend", href: "https://github.com/GospelExcel" },
       { label: "Backend", href: "https://github.com/GospelExcel" },
     ],
+  },
+  {
+    title: "Personal Portfolio",
+    description:
+      "Personal site with anime.js intro animation, scroll-based blur-in transitions, dark/light mode, and a warm minimal aesthetic.",
+    href: "https://github.com/GospelExcel",
+    date: "2026",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "anime.js"],
   },
 ];
 
