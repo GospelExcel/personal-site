@@ -3,12 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import anime from "animejs/lib/anime.es.js";
 
+// Module-level flag: resets on refresh, persists across SPA navigation
+let introPlayed = false;
+
 export function Intro() {
   const [phase, setPhase] = useState<"pending" | "playing" | "done">("pending");
   const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (sessionStorage.getItem("intro-played")) {
+    if (introPlayed) {
       document.documentElement.classList.add("intro-done");
       setPhase("done");
       return;
@@ -92,9 +95,9 @@ export function Intro() {
   }
 
   function finish() {
+    introPlayed = true;
     document.documentElement.classList.add("intro-done");
     setPhase("done");
-    sessionStorage.setItem("intro-played", "1");
   }
 
   if (phase === "done" || phase === "pending") return null;

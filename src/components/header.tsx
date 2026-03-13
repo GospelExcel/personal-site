@@ -8,13 +8,13 @@ export function Header() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // If intro already played, show immediately
-    if (sessionStorage.getItem("intro-played")) {
+    // Check if intro-done class is already on html (intro already finished)
+    if (document.documentElement.classList.contains("intro-done")) {
       setVisible(true);
       return;
     }
 
-    // Otherwise wait for the intro to settle into position
+    // Otherwise wait for the intro to settle
     function onSettled() {
       setVisible(true);
     }
