@@ -89,8 +89,7 @@ export function Intro() {
 
     const dx = last.left - first.left;
     const dy = last.top - first.top;
-    const scaleX = last.width / first.width;
-    const scaleY = last.height / first.height;
+    const scale = last.height / first.height;
 
     // Hide lines before the move
     const lines = containerRef.current?.querySelectorAll(".line");
@@ -111,8 +110,7 @@ export function Intro() {
       targets: introName,
       translateX: dx,
       translateY: dy,
-      scaleX: scaleX,
-      scaleY: scaleY,
+      scale: scale,
       duration: 800,
       easing: "easeInOutQuint",
       complete: () => {
