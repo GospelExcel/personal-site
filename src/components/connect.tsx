@@ -1,3 +1,5 @@
+"use client";
+
 import { socialLinks } from "@/lib/data";
 import { GitHubIcon, LinkedInIcon, MailIcon, InstagramIcon, XIcon } from "./icons";
 import { FadeIn } from "./fade-in";
@@ -26,10 +28,18 @@ export function Connect() {
                 target={link.icon === "mail" ? undefined : "_blank"}
                 rel={link.icon === "mail" ? undefined : "noopener noreferrer"}
                 aria-label={link.label}
-                className="flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-muted transition-colors hover:border-accent hover:text-accent"
+                className="group/email relative flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-muted transition-colors hover:border-accent hover:text-accent"
               >
                 <Icon className="h-4 w-4" />
                 {link.label}
+                {link.icon === "mail" && (
+                  <span
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}
+                    className="absolute -top-9 left-1/2 -translate-x-1/2 cursor-text select-all whitespace-nowrap rounded-full border border-border bg-surface px-3 py-1 text-xs text-muted opacity-0 shadow-sm transition-all duration-300 after:absolute after:left-0 after:top-full after:h-3 after:w-full group-hover/email:-top-10 group-hover/email:opacity-100"
+                  >
+                    gexcel123@gmail.com
+                  </span>
+                )}
               </a>
             </FadeIn>
           );
