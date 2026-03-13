@@ -1,8 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import { FadeIn } from "./fade-in";
+import { ContactPopup } from "./contact-popup";
 
 export function About() {
+  const [popupOpen, setPopupOpen] = useState(false);
+
   return (
-    <section>
+    <section className="relative z-10">
       <FadeIn>
         <p className="text-base leading-relaxed text-foreground">
           <span className="text-shimmer">Software Engineer</span> based in NYC. I love creating in every shape and
@@ -22,10 +28,22 @@ export function About() {
         </p>
       </FadeIn>
       <FadeIn delay={300}>
-        <p className="mt-4 text-base leading-relaxed text-muted">
+        <div className="mt-4 text-base leading-relaxed text-muted">
           New friends to make. New experiences to be had.{" "}
-          <em className="italic text-foreground">Let&apos;s build.</em>
-        </p>
+          <span className="relative z-[999] inline-block">
+            <button
+              type="button"
+              onClick={() => setPopupOpen((prev) => !prev)}
+              className="text-shimmer-bold cursor-pointer italic"
+            >
+              Let&apos;s build.
+            </button>
+            <ContactPopup
+              open={popupOpen}
+              onClose={() => setPopupOpen(false)}
+            />
+          </span>
+        </div>
       </FadeIn>
     </section>
   );

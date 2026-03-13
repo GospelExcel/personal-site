@@ -1,11 +1,13 @@
 import { socialLinks } from "@/lib/data";
-import { GitHubIcon, LinkedInIcon, MailIcon } from "./icons";
+import { GitHubIcon, LinkedInIcon, MailIcon, InstagramIcon, XIcon } from "./icons";
 import { FadeIn } from "./fade-in";
 
 const iconMap = {
   github: GitHubIcon,
   linkedin: LinkedInIcon,
   mail: MailIcon,
+  instagram: InstagramIcon,
+  x: XIcon,
 } as const;
 
 export function Connect() {

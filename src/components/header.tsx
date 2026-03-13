@@ -33,8 +33,7 @@ export function Header() {
           <Link href="/" className="transition-colors hover:text-foreground">
             home
           </Link>
-          <span className="cursor-default text-border">blog</span>
-          <span className="cursor-default text-border">photos</span>
+          <span className="cursor-default text-border" title="Coming soon">blog</span>
         </nav>
         <ThemeToggle />
       </div>

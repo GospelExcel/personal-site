@@ -18,7 +18,7 @@ export type Experience = {
 export type SocialLink = {
   label: string;
   href: string;
-  icon: "github" | "linkedin" | "mail";
+  icon: "github" | "linkedin" | "mail" | "instagram" | "x";
 };
 
 export const siteConfig = {
@@ -60,7 +60,7 @@ export const projects: Project[] = [
   {
     title: "Personal Portfolio",
     description:
-      "Personal site with anime.js intro animation, scroll-based blur-in transitions, dark/light mode, and a warm minimal aesthetic.",
+      "Personal site with anime.js intro animation, scroll-based blur-in transitions, dark/light mode, and a warm minimal aesthetic. \u2728 You are here!",
     href: "https://github.com/GospelExcel",
     date: "2026",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "anime.js"],
@@ -103,4 +103,6 @@ export const socialLinks: SocialLink[] = [
   { label: "GitHub", href: "https://github.com/GospelExcel", icon: "github" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/gospelexcel", icon: "linkedin" },
   { label: "Email", href: "mailto:gexcel123@gmail.com", icon: "mail" },
+  { label: "Instagram", href: "https://instagram.com/go_excel", icon: "instagram" },
+  { label: "X", href: "https://x.com/gospelexcel", icon: "x" },
 ];
