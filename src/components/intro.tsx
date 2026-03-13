@@ -9,6 +9,7 @@ export function Intro() {
   );
   const containerRef = useRef<HTMLDivElement>(null);
   const nameRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (sessionStorage.getItem("intro-played")) {
@@ -76,7 +77,8 @@ export function Intro() {
   function startMove() {
     const introName = nameRef.current;
     const headerName = document.getElementById("header-name");
-    if (!introName || !headerName) {
+    const overlay = overlayRef.current;
+    if (!introName || !headerName || !overlay) {
       finish();
       return;
     }
@@ -93,18 +95,40 @@ export function Intro() {
     // Hide lines before the move
     const lines = containerRef.current?.querySelectorAll(".line");
     lines?.forEach((line) => {
-      (line as HTMLElement).style.opacity = "0";
+      anime({
+        targets: line,
+        opacity: 0,
+        duration: 300,
+        easing: "easeOutQuint",
+      });
     });
-
-    // Animate text to header position
-    introName.style.transition =
-      "transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)";
-    introName.style.transformOrigin = "top left";
-    introName.style.transform = `translate(${dx}px, ${dy}px) scale(${scaleX}, ${scaleY})`;
 
     setPhase("move");
 
-    setTimeout(() => finish(), 700);
+    // Animate text to header position using anime.js
+    // Overlay stays fully opaque during this — user only sees text moving on solid bg
+    anime({
+      targets: introName,
+      translateX: dx,
+      translateY: dy,
+      scaleX: scaleX,
+      scaleY: scaleY,
+      duration: 800,
+      easing: "easeInOutQuint",
+      complete: () => {
+        // Text has arrived — tell the header to show itself (behind the overlay)
+        window.dispatchEvent(new CustomEvent("intro-settled"));
+
+        // Now fade the overlay away like a curtain lifting
+        anime({
+          targets: overlay,
+          opacity: [1, 0],
+          duration: 600,
+          easing: "easeOutQuint",
+          complete: () => finish(),
+        });
+      },
+    });
   }
 
   function finish() {
@@ -116,21 +140,25 @@ export function Intro() {
 
   return (
     <div
-      ref={containerRef}
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-background transition-opacity duration-500 ${
-        phase === "move" ? "opacity-0 pointer-events-none" : "opacity-100"
-      }`}
+      ref={overlayRef}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-background"
     >
-      <h1 className="ml5">
-        <span className="text-wrapper">
-          <span className="line line1" />
-          <span ref={nameRef} className="name-group">
-            <span className="letters letters-left">Gospel</span>
-            <span className="letters letters-right">Excel</span>
+      <div ref={containerRef}>
+        <h1 className="ml5">
+          <span className="text-wrapper">
+            <span className="line line1" />
+            <span
+              ref={nameRef}
+              className="name-group"
+              style={{ transformOrigin: "top left" }}
+            >
+              <span className="letters letters-left">Gospel</span>
+              <span className="letters letters-right">Excel</span>
+            </span>
+            <span className="line line2" />
           </span>
-          <span className="line line2" />
-        </span>
-      </h1>
+        </h1>
+      </div>
     </div>
   );
 }
